@@ -1,0 +1,312 @@
+[
+    {
+        "id": "316cdc00.ff4574",
+        "type": "tab",
+        "label": "mindstorms uselessss box",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "efc768ee.606268",
+        "type": "debug",
+        "z": "316cdc00.ff4574",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1130,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "79ac5b9b.701b74",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "switch_up",
+        "group": "43384344.1d96cc",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black ",
+        "bgcolor": "white",
+        "icon": "fa-arrow-circle-o-up",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "efc768ee.606268"
+            ]
+        ]
+    },
+    {
+        "id": "3e5fcf35.7f4f9",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "first row 1",
+        "order": 1,
+        "width": "2",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d7d3cb9.034fb4",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": " move_to_right",
+        "group": "43384344.1d96cc",
+        "order": 7,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black ",
+        "bgcolor": "white",
+        "icon": "fa-arrow-circle-o-right",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "rovale/vkv/ub/move_to_right",
+        "x": 680,
+        "y": 240,
+        "wires": [
+            [
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
+            ]
+        ]
+    },
+    {
+        "id": "43415704.b61a48",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "move_to_left",
+        "group": "43384344.1d96cc",
+        "order": 5,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black ",
+        "bgcolor": "white",
+        "icon": "fa-arrow-circle-o-left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "rovale/vkv/ub/move_to_left",
+        "x": 290,
+        "y": 240,
+        "wires": [
+            [
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
+            ]
+        ]
+    },
+    {
+        "id": "65cab488.c4710c",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "switch_down",
+        "group": "43384344.1d96cc",
+        "order": 10,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black ",
+        "bgcolor": "white",
+        "icon": "fa-arrow-circle-o-down",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "efc768ee.606268"
+            ]
+        ]
+    },
+    {
+        "id": "24e307cb.f856d8",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "first row 2",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 600,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "679bfc79.06a5d4",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "second row 1",
+        "order": 4,
+        "width": "1",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 110,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21ddc13e.ab1e8e",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "second row 3",
+        "order": 8,
+        "width": "2",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 880,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a3280bd.bfd33",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "third row 2",
+        "order": 11,
+        "width": "3",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 670,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7d7bce93.c4e37",
+        "type": "ui_template",
+        "z": "316cdc00.ff4574",
+        "group": "43384344.1d96cc",
+        "name": "third row 1",
+        "order": 9,
+        "width": "2",
+        "height": "1",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c30a7c1a.cc77c",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "wait",
+        "group": "43384344.1d96cc",
+        "order": 6,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black",
+        "bgcolor": "white",
+        "icon": "fa-hourglass",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 470,
+        "y": 240,
+        "wires": [
+            [
+                "efc768ee.606268"
+            ]
+        ]
+    },
+    {
+        "id": "ab1ddf4d.313bb",
+        "type": "mqtt out",
+        "z": "316cdc00.ff4574",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "59ee8ac7.042ac4",
+        "x": 1110,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "43384344.1d96cc",
+        "type": "ui_group",
+        "z": "",
+        "name": "movement(useless_box)",
+        "tab": "e5d3d282.08efd",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "59ee8ac7.042ac4",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "m2m.eclipse.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": ""
+    },
+    {
+        "id": "e5d3d282.08efd",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Vinkeveen",
+        "icon": "dashboard",
+        "order": 2
+    }
+]
