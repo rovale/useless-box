@@ -14,7 +14,7 @@
         "active": true,
         "console": "false",
         "complete": "payload",
-        "x": 1130,
+        "x": 1070,
         "y": 240,
         "wires": []
     },
@@ -34,12 +34,13 @@
         "icon": "fa-arrow-circle-o-up",
         "payload": "",
         "payloadType": "str",
-        "topic": "",
-        "x": 400,
+        "topic": "rovale/vkv/ub/switch_up",
+        "x": 460,
         "y": 160,
         "wires": [
             [
-                "efc768ee.606268"
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
             ]
         ]
     },
@@ -130,12 +131,13 @@
         "icon": "fa-arrow-circle-o-down",
         "payload": "",
         "payloadType": "str",
-        "topic": "",
-        "x": 390,
+        "topic": "rovale/vkv/ub/switch_down",
+        "x": 450,
         "y": 320,
         "wires": [
             [
-                "efc768ee.606268"
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
             ]
         ]
     },
@@ -152,7 +154,7 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 600,
+        "x": 660,
         "y": 160,
         "wires": [
             []
@@ -209,7 +211,7 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 670,
+        "x": 710,
         "y": 320,
         "wires": [
             []
@@ -268,8 +270,8 @@
         "qos": "",
         "retain": "",
         "broker": "59ee8ac7.042ac4",
-        "x": 1110,
-        "y": 360,
+        "x": 1350,
+        "y": 240,
         "wires": []
     },
     {
@@ -278,6 +280,7 @@
         "z": "",
         "name": "movement(useless_box)",
         "tab": "e5d3d282.08efd",
+        "order": 1,
         "disp": true,
         "width": "6"
     },

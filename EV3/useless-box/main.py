@@ -61,9 +61,14 @@ def main():
     button = Button()
     hand_sensor = UltrasonicSensor(INPUT_3)
     switch_sensor = ColorSensor(INPUT_4)
+
     retract_motor = LargeMotor(OUTPUT_B)
+    is_retracted = False
+
     switch_motor = LargeMotor(OUTPUT_C)
+
     avoid_motor = MediumMotor(OUTPUT_D)
+    is_avoiding = False
 
     # print something to the screen of the device
     device_names = list_device_names('/sys/class/tacho-motor', '*')
@@ -80,16 +85,35 @@ def main():
 
     # The callback for when a PUBLISH message is received from the server.
     def on_message(client, userdata, msg):
-        debug_print(msg.topic + " " + msg.payload.decode('UTF-8'))
+        nonlocal is_retracted
+        nonlocal is_avoiding
+
+        debug_print(msg.topic + ":" + msg.payload.decode('UTF-8'))
 
         if msg.topic == 'rovale/vkv/ub/say':
             say(msg.payload.decode('UTF-8'))
 
         if msg.topic == 'rovale/vkv/ub/move_to_left':
-            move(avoid_motor, 500, 500)
+            if not is_avoiding:
+                is_avoiding = True
+                move(avoid_motor, 500, 500)
+                is_avoiding = False
 
         if msg.topic == 'rovale/vkv/ub/move_to_right':
-            move(avoid_motor, -500, 500)
+            if not is_avoiding:
+                is_avoiding = True
+                move(avoid_motor, -500, 500)
+                is_avoiding = False
+
+        if msg.topic == 'rovale/vkv/ub/switch_up':
+            if is_retracted:
+                move(retract_motor, 50, 200)
+                is_retracted = False
+                 
+        if msg.topic == 'rovale/vkv/ub/switch_down':
+            if not is_retracted:
+                is_retracted = True
+                move(retract_motor, -50, 200)
 
     client = mqtt.Client()
     client.on_connect = on_connect
@@ -102,9 +126,12 @@ def main():
 
     while not button.enter:
         if hand_sensor.distance_centimeters < 15:
-            move(avoid_motor, 500, 500)
+            if not is_avoiding:
+                is_avoiding = True
+                move(avoid_motor, 500, 500)
+                is_avoiding = False
 
-        if switch_sensor.reflected_light_intensity > 15:
+        if switch_sensor.reflected_light_intensity > 15 and not is_retracted:
             debug_print("-----")
             debug_print(switch_motor.position)
             move(switch_motor, -92, 1000)
