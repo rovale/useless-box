@@ -1,2 +1,2 @@
 # useless-box
-An effort of my son and I to program the EV3 useless box with Python, Node-RED, and MQTT
+An effort of me and my son to program the [EV3 useless box](http://jkbrickworks.com/luuma-ev3) with Python, [Node-RED](https://nodered.org), and [MQTT](https://www.hivemq.com/blog/mqtt-essentials-part-1-introducing-mqtt).
