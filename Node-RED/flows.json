@@ -35,8 +35,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/switch_up",
-        "x": 440,
-        "y": 100,
+        "x": 480,
+        "y": 80,
         "wires": [
             [
                 "efc768ee.606268",
@@ -45,31 +45,12 @@
         ]
     },
     {
-        "id": "3e5fcf35.7f4f9",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "first row 1",
-        "order": 1,
-        "width": "2",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 120,
-        "y": 100,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "7d7d3cb9.034fb4",
         "type": "ui_button",
         "z": "316cdc00.ff4574",
         "name": " move_to_right",
         "group": "43384344.1d96cc",
-        "order": 7,
+        "order": 6,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -95,7 +76,7 @@
         "z": "316cdc00.ff4574",
         "name": "move_to_left",
         "group": "43384344.1d96cc",
-        "order": 5,
+        "order": 4,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -121,7 +102,7 @@
         "z": "316cdc00.ff4574",
         "name": "switch_down",
         "group": "43384344.1d96cc",
-        "order": 10,
+        "order": 8,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -132,7 +113,7 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/switch_down",
-        "x": 430,
+        "x": 470,
         "y": 400,
         "wires": [
             [
@@ -142,107 +123,12 @@
         ]
     },
     {
-        "id": "24e307cb.f856d8",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "first row 2",
-        "order": 3,
-        "width": "3",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 920,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "679bfc79.06a5d4",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "second row 1",
-        "order": 4,
-        "width": "1",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 110,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "21ddc13e.ab1e8e",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "second row 3",
-        "order": 8,
-        "width": "2",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 930,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "3a3280bd.bfd33",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "third row 2",
-        "order": 11,
-        "width": "3",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 930,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7d7bce93.c4e37",
-        "type": "ui_template",
-        "z": "316cdc00.ff4574",
-        "group": "43384344.1d96cc",
-        "name": "third row 1",
-        "order": 9,
-        "width": "2",
-        "height": "1",
-        "format": "<div ng-bind-html=\"msg.payload\"></div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 110,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c30a7c1a.cc77c",
         "type": "ui_button",
         "z": "316cdc00.ff4574",
         "name": "wait",
         "group": "43384344.1d96cc",
-        "order": 6,
+        "order": 1,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -253,8 +139,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/wait",
-        "x": 470,
-        "y": 220,
+        "x": 290,
+        "y": 80,
         "wires": [
             [
                 "efc768ee.606268",
@@ -271,19 +157,141 @@
         "qos": "",
         "retain": "",
         "broker": "59ee8ac7.042ac4",
-        "x": 850,
-        "y": 20,
+        "x": 1010,
+        "y": 40,
         "wires": []
+    },
+    {
+        "id": "463b834a.ca76bc",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": " prank",
+        "group": "43384344.1d96cc",
+        "order": 7,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black",
+        "bgcolor": "white",
+        "icon": "fa-bug ",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "rovale/vkv/ub/prank",
+        "x": 270,
+        "y": 400,
+        "wires": [
+            [
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
+            ]
+        ]
+    },
+    {
+        "id": "285721c8.a7e11e",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "super_move",
+        "group": "43384344.1d96cc",
+        "order": 9,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black",
+        "bgcolor": "white",
+        "icon": "fa-arrows ",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "rovale/vkv/ub/super_move",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
+            ]
+        ]
+    },
+    {
+        "id": "43dd65c7.db3f9c",
+        "type": "ui_button",
+        "z": "316cdc00.ff4574",
+        "name": "ok_google",
+        "group": "43384344.1d96cc",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "label": "",
+        "color": "black",
+        "bgcolor": "white",
+        "icon": "hearing",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "rovale/vkv/ub/ok_google",
+        "x": 710,
+        "y": 80,
+        "wires": [
+            [
+                "ab1ddf4d.313bb",
+                "efc768ee.606268"
+            ]
+        ]
+    },
+    {
+        "id": "f9398608.881e88",
+        "type": "ui_switch",
+        "z": "316cdc00.ff4574",
+        "name": "is_switched_on",
+        "label": "",
+        "group": "43384344.1d96cc",
+        "order": 5,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "decouple": "true",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "str",
+        "onicon": "fa-power-off",
+        "oncolor": "red",
+        "offvalue": "0",
+        "offvalueType": "str",
+        "officon": "fa-power-off",
+        "offcolor": "grey",
+        "x": 540,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "753dd9e0.125cd8",
+        "type": "mqtt in",
+        "z": "316cdc00.ff4574",
+        "name": "mqtt",
+        "topic": "rovale/vkv/ub/is_switched_on",
+        "qos": "0",
+        "broker": "59ee8ac7.042ac4",
+        "x": 270,
+        "y": 320,
+        "wires": [
+            [
+                "f9398608.881e88"
+            ]
+        ]
     },
     {
         "id": "43384344.1d96cc",
         "type": "ui_group",
         "z": "",
-        "name": "movement(useless_box)",
+        "name": "The useless box",
         "tab": "e5d3d282.08efd",
         "order": 1,
         "disp": true,
-        "width": "6"
+        "width": "3"
     },
     {
         "id": "59ee8ac7.042ac4",

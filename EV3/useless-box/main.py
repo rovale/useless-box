@@ -60,7 +60,10 @@ def main():
     set_font('Lat15-Terminus24x12')
 
     button = Button()
+
     hand_sensor = UltrasonicSensor(INPUT_3)
+    do_super_move = False
+
     switch_sensor = ColorSensor(INPUT_4)
 
     retract_motor = LargeMotor(OUTPUT_B)
@@ -90,11 +93,15 @@ def main():
         nonlocal is_retracted
         nonlocal is_avoiding
         nonlocal wait
+        nonlocal do_super_move
 
-        debug_print(msg.topic + ":" + msg.payload.decode('UTF-8'))
+        debug_print(msg.topic + " : " + msg.payload.decode('UTF-8'))
 
         if msg.topic == 'rovale/vkv/ub/say':
             say(msg.payload.decode('UTF-8'))
+
+        if msg.topic == 'rovale/vkv/ub/ok_google':
+            say('OK Google')
 
         if msg.topic == 'rovale/vkv/ub/move_to_left':
             if not is_avoiding:
@@ -108,11 +115,14 @@ def main():
                 move(avoid_motor, -500, 500)
                 is_avoiding = False
 
+        if msg.topic == 'rovale/vkv/ub/super_move':
+            do_super_move = True
+
         if msg.topic == 'rovale/vkv/ub/switch_up':
             if is_retracted:
                 move(retract_motor, 50, 200)
                 is_retracted = False
-                 
+
         if msg.topic == 'rovale/vkv/ub/switch_down':
             if not is_retracted:
                 is_retracted = True
@@ -131,20 +141,25 @@ def main():
     retract_motor.run_timed(time_sp=100, speed_sp=100, stop_action="hold")
 
     while not button.enter:
-        if hand_sensor.distance_centimeters < 15:
-            if not is_avoiding:
-                is_avoiding = True
-                move(avoid_motor, 500, 500)
-                is_avoiding = False
-
         if switch_sensor.reflected_light_intensity > 15 and not is_retracted:
+            client.publish("rovale/vkv/ub/is_switched_on", 1)
+
             sleep(wait)
             wait = 0
-            debug_print("-----")
-            debug_print(switch_motor.position)
+
             move(switch_motor, -92, 1000)
             move(switch_motor, 92, 500)
-            debug_print(switch_motor.position)
+
+            if switch_sensor.reflected_light_intensity <= 15:
+                client.publish("rovale/vkv/ub/is_switched_on", 0)
+
+        if do_super_move and hand_sensor.distance_centimeters < 15 and not is_avoiding:
+            is_avoiding = True
+            move(avoid_motor, 1000, 1000)
+            move(avoid_motor, -1500, 1000)
+            move(avoid_motor, 500, 1000)
+            is_avoiding = False
+            do_super_move = False
 
     debug_print('The end!')
 
