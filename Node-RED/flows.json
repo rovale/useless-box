@@ -14,8 +14,8 @@
         "active": true,
         "console": "false",
         "complete": "payload",
-        "x": 1070,
-        "y": 240,
+        "x": 870,
+        "y": 500,
         "wires": []
     },
     {
@@ -35,8 +35,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/switch_up",
-        "x": 460,
-        "y": 160,
+        "x": 440,
+        "y": 100,
         "wires": [
             [
                 "efc768ee.606268",
@@ -58,7 +58,7 @@
         "fwdInMessages": true,
         "templateScope": "local",
         "x": 120,
-        "y": 160,
+        "y": 100,
         "wires": [
             []
         ]
@@ -80,8 +80,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/move_to_right",
-        "x": 680,
-        "y": 240,
+        "x": 740,
+        "y": 220,
         "wires": [
             [
                 "efc768ee.606268",
@@ -106,8 +106,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/move_to_left",
-        "x": 290,
-        "y": 240,
+        "x": 270,
+        "y": 220,
         "wires": [
             [
                 "efc768ee.606268",
@@ -132,8 +132,8 @@
         "payload": "",
         "payloadType": "str",
         "topic": "rovale/vkv/ub/switch_down",
-        "x": 450,
-        "y": 320,
+        "x": 430,
+        "y": 400,
         "wires": [
             [
                 "efc768ee.606268",
@@ -154,8 +154,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 660,
-        "y": 160,
+        "x": 920,
+        "y": 80,
         "wires": [
             []
         ]
@@ -174,7 +174,7 @@
         "fwdInMessages": true,
         "templateScope": "local",
         "x": 110,
-        "y": 240,
+        "y": 220,
         "wires": [
             []
         ]
@@ -192,8 +192,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 880,
-        "y": 240,
+        "x": 930,
+        "y": 220,
         "wires": [
             []
         ]
@@ -211,8 +211,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 710,
-        "y": 320,
+        "x": 930,
+        "y": 400,
         "wires": [
             []
         ]
@@ -231,7 +231,7 @@
         "fwdInMessages": true,
         "templateScope": "local",
         "x": 110,
-        "y": 320,
+        "y": 400,
         "wires": [
             []
         ]
@@ -252,12 +252,13 @@
         "icon": "fa-hourglass",
         "payload": "",
         "payloadType": "str",
-        "topic": "",
+        "topic": "rovale/vkv/ub/wait",
         "x": 470,
-        "y": 240,
+        "y": 220,
         "wires": [
             [
-                "efc768ee.606268"
+                "efc768ee.606268",
+                "ab1ddf4d.313bb"
             ]
         ]
     },
@@ -270,8 +271,8 @@
         "qos": "",
         "retain": "",
         "broker": "59ee8ac7.042ac4",
-        "x": 1350,
-        "y": 240,
+        "x": 850,
+        "y": 20,
         "wires": []
     },
     {

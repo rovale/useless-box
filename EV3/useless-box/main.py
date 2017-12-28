@@ -5,6 +5,7 @@ import os
 import sys
 import paho.mqtt.client as mqtt
 
+from time import sleep
 from ev3dev.ev3 import *
 from ev3dev.core import list_device_names
 
@@ -66,6 +67,7 @@ def main():
     is_retracted = False
 
     switch_motor = LargeMotor(OUTPUT_C)
+    wait = 0
 
     avoid_motor = MediumMotor(OUTPUT_D)
     is_avoiding = False
@@ -87,6 +89,7 @@ def main():
     def on_message(client, userdata, msg):
         nonlocal is_retracted
         nonlocal is_avoiding
+        nonlocal wait
 
         debug_print(msg.topic + ":" + msg.payload.decode('UTF-8'))
 
@@ -115,6 +118,9 @@ def main():
                 is_retracted = True
                 move(retract_motor, -50, 200)
 
+        if msg.topic == 'rovale/vkv/ub/wait':
+            wait = 5
+
     client = mqtt.Client()
     client.on_connect = on_connect
     client.on_message = on_message
@@ -132,6 +138,8 @@ def main():
                 is_avoiding = False
 
         if switch_sensor.reflected_light_intensity > 15 and not is_retracted:
+            sleep(wait)
+            wait = 0
             debug_print("-----")
             debug_print(switch_motor.position)
             move(switch_motor, -92, 1000)
